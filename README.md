@@ -1,19 +1,53 @@
 # ML-Practice-Projects
 Just some projects to help me practice machine learning
 
+---
+
+**Predicting Glycosylation using Linear Regression (4/9)**
+
+The glycosylation dataset was obtained from one of my PI's papers (https://doi.org/10.1039/D0SC06222G).  Experimental parameters were used to predict the stereochemical outcome of the glycosylation reaction.  Features included temperature along with computational descriptors for the electrophile, nucleophile, activator, and solvent (11 total features).  The computational descriptors were obtained using DFT.
+
+In the original paper, random forests were used to predict the stereochemical outcome.  In this project, I attempted to use linear regression to predict the selectivity of the alpha product.
+
+The linear regression model had a cost of 105.023220 on the training dataset.  On an evaluation dataset, the model had a cost of 114.187881.  The high cost on both training and evaluation sets is a sign of high bias, suggesting that either there were not enough features or the existing features were not suitable for predicting the outcome.
+
+_Features:_
+- Temperature
+- Electrophile
+  - C4
+  - C2
+  - C shift
+- Nucleophile
+  - O shift
+  - O area
+  - alpha carbon area
+- Activator
+  - HOMO
+  - Area
+- Solvent
+  - Minimum potential energy
+  - Maximum potential energy
+
+_Target variable:_ alpha selectivity
+
+---
+
+
 **Iris Classification (3/24)**
 
 The Iris dataset was obtained from the UCI Machine Learning repository.  Features of the plant were used to classify the species.  
+
 Logistic regression was implemented along with regularization.  Validation set was used to tune regularization hyperparameter.  
+
 Model achieves around 92% - 100% test accuracy.  Large variation in test accuracy is due to the small size of the dataset (m = 150).
 
-Features:
+_Features:_
 - Sepal length (cm)
 - Sepal width (cm)
 - Petal length (cm)
 - Petal width (cm)
 
-Classes:
+_Classes:_
 - Iris setosa
 - Iris versicolour
 - Iris virginica
