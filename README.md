@@ -3,7 +3,22 @@ Just some projects to help me practice machine learning
 
 ---
 
-**Predicting Glycosylation using Linear Regression (4/9)**
+**Predicting Glycosylation using Neural Network (4/13/22)**
+
+The same glycosylation dataset was used, this time the goal was classification rather than regression.  The entries were labelled with stereochemical outcomes α-dominant, β-dominant, or competition, depending on the value of α-selectivity (a).
+
+A neural network with 2 hidden layers was used to predict the stereochemical outcome.  The height of the hidden layers was tuned in addition to the regularization hyperparameter (lambda).
+
+The model that yielded the lowest cost on the validation set had a height of 14 for its hidden layers and the value of lambda was 3.0.  When evaluated on the test set, the accuracy of the model was 0.73.  Despite the poor performance of the model, this project was a good first step for gaining experience in neural networks.
+
+_Target variable:_ Stereochemical outcome
+- α-dominant (a >= 60)
+- β-dominant (a < 40)
+- competition (40 <= a < 60)
+
+---
+
+**Predicting Glycosylation using Linear Regression (4/9/22)**
 
 The glycosylation dataset was obtained from one of my PI's papers (https://doi.org/10.1039/D0SC06222G).  Experimental parameters were used to predict the stereochemical outcome of the glycosylation reaction.  Features included temperature along with computational descriptors for the electrophile, nucleophile, activator, and solvent (11 total features).  The computational descriptors were obtained using DFT.
 
@@ -33,7 +48,7 @@ _Target variable:_ alpha selectivity
 ---
 
 
-**Iris Classification (3/24)**
+**Iris Classification (3/24/22)**
 
 The Iris dataset was obtained from the UCI Machine Learning repository.  Features of the plant were used to classify the species.  
 
